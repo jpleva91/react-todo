@@ -5,10 +5,11 @@ class TodoList extends Component {
   render(){
     let todoArray = this.props.todos.map( (todo) => {
       return (
-      	console.log('each todo map:',todo),
         <Todo
           key={todo._id}
-          todo={todo}/>
+          todo={todo}
+          onDeleteTodo={this.props.onDeleteTodo}
+          onUpdateTodo={this.props.onUpdateTodo} />
       )
     })
     console.log("todo array:",todoArray)
